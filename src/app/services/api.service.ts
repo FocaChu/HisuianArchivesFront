@@ -24,3 +24,4 @@ export class ApiService {
   healthCheck(): Observable<HealthCheckResponse> {
     return this.http.get<HealthCheckResponse>(`${this.baseUrl}/health`, this.aPIOptions);
   }
+}
