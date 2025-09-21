@@ -1,0 +1,23 @@
+<div class="text-center">
+  <h1 class="text-4xl font-bold mb-4">Bem-vindo ao Hisuian Archives</h1>
+  <p class="text-lg text-gray-600">Sua plataforma definitiva para catalogação de Pokémon e TCG.</p>
+
+  <div class="mt-8 p-6 bg-white rounded-lg shadow-md max-w-md mx-auto">
+    <h2 class="text-xl font-semibold mb-4">Status da Conexão com a API</h2>
+
+    <div *ngIf="healthStatus === 'connecting'" class="text-blue-500">
+      <p>Conectando...</p>
+    </div>
+
+    <div *ngIf="healthStatus === 'healthy' && backendResponse" class="text-green-600">
+      <p class="font-bold">Conexão estabelecida com sucesso!</p>
+      <p class="text-sm">Status do Banco de Dados: {{ backendResponse.entries['MySQL Database'].status }}</p>
+    </div>
+
+    <div *ngIf="healthStatus === 'unhealthy'" class="text-red-600">
+      <p class="font-bold">Falha na Conexão</p>
+      <p class="text-sm">{{ errorMessage }}</p>
+    </div>
+
+  </div>
+</div>
