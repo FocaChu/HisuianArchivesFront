@@ -8,13 +8,30 @@
 
     <div class="p-4 h-full flex flex-col">
 
-        <div class="flex flex-col items-center pt-4 mb-4 flex-shrink-0">
-            <img src="favicon.ico" alt="Poké Ball Logo" class="w-16 h-16 mb-2">
-            <h2 class="text-lg font-bold text-indigo-400">UserName</h2>
-            <a routerLink="/profile" (click)="onCloseMenu()"
-                class="text-xs text-gray-400 hover:text-indigo-400 transition-colors duration-150 cursor-pointer mt-1">Ver
-                Perfil</a>
-        </div>
+        <ng-container *ngIf="(isLoggedIn$ | async) && (userProfile$ | async) as user">
+            <div class="flex flex-col items-center pt-4 mb-4 flex-shrink-0">
+                <img src="favicon.ico" alt="Poké Ball Logo" class="w-16 h-16 mb-2">
+                
+                <h2 class="text-lg font-bold text-indigo-400">{{ user.name }}</h2>
+
+                <a routerLink="/profile" (click)="onCloseMenu()"
+                    class="text-xs text-gray-400 hover:text-indigo-400 ...">
+                    Ver Perfil
+                </a>
+            </div>
+        </ng-container>
+
+        <ng-container *ngIf="!(isLoggedIn$ | async)">
+            <div class="flex flex-col items-center pt-4 mb-4 flex-shrink-0">
+                <img src="favicon.ico" alt="Poké Ball Logo" class="w-16 h-16 mb-2">
+
+                <button (click)="navigateToLogin()" 
+                    class="bg-indigo-600 hover:bg-indigo-500 px-4 py-2 rounded-md font-semibold ...">
+                    {{ 'SIDEBAR.LOGIN_BUTTON' | translate }}
+                </button>
+
+            </div>
+        </ng-container>
 
         <nav class="flex flex-col space-y-1 flex-grow overflow-y-auto">
 

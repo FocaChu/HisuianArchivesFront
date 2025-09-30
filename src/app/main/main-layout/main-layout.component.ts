@@ -11,6 +11,7 @@ import { FooterComponent } from '../footer/footer.component';
   templateUrl: './main-layout.component.html',
   styleUrls: ['./main-layout.component.scss']
 })
+
 export class MainLayoutComponent {
   isMenuOpen: boolean = false;
 
