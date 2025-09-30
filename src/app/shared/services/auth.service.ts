@@ -61,8 +61,22 @@ export class AuthService {
     );
   }
 
-  register(data: RegisterRequestDto): Observable<any> {
-    return this.http.post(`${this.apiUrl}/register`, data);
+  register(data: RegisterRequestDto): Observable<AuthResponseDto> {
+    return this.http.post<AuthResponseDto>(`${this.apiUrl}/register`, data).pipe(
+      tap(response => this.handleAuthSuccess(response))
+    );
+  }
+    private handleAuthSuccess(response: AuthResponseDto): void {
+    if (!response || !response.token) return;
+
+    localStorage.setItem('auth_token', response.token);
+    if (response.userProfile) {
+      localStorage.setItem('user_profile', JSON.stringify(response.userProfile));
+      this.currentUserProfileSubject.next(response.userProfile);
+    }
+
+    this.isLoggedInSubject.next(true);
+    this.router.navigate(['/']);
   }
 
   logout(): void {

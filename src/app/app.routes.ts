@@ -5,9 +5,11 @@ import { MainLayoutComponent } from './main/main-layout/main-layout.component';
 import { LoginComponent } from './pages/login/login.component';
 import { authGuard } from './core/guards/auth.guard';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { RegisterComponent } from './pages/register/register.component';
 
 export const routes: Routes = [
     { path: 'login', component: LoginComponent },
+    { path: 'register', component: RegisterComponent },
 
     {
         path: '',
