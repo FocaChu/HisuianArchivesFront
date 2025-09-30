@@ -1,0 +1,38 @@
+<header class="bg-gray-800 text-white p-4 flex items-center justify-between shadow-lg relative z-30">
+
+    <div class="flex items-center">
+
+        <button (click)="onToggleMenu()" aria-label="Abrir e fechar menu lateral" [attr.aria-expanded]="isMenuOpen"
+            class="p-2 focus:outline-none focus:ring-2 focus:ring-indigo-400 rounded transition-colors duration-150 relative z-50">
+            <div [ngClass]="{'open': isMenuOpen}" class="hamburger-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+
+        <h1 class="font-bold text-xl ml-4">{{ 'HEADER.TITLE' | translate }}</h1>
+
+    </div>
+
+    <nav class="hidden md:flex items-center gap-4">
+        <button routerLink="/"
+        class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded-md transition-colors duration-200">
+
+            {{ 'HEADER.NEW_DEX_BUTTON' | translate }}
+
+        </button>
+
+        <button routerLink="/"
+        class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded-md transition-colors duration-200">
+
+            {{ 'HEADER.NEW_SET_BUTTON' | translate }}
+
+        </button>
+        
+        <button routerLink="/"
+            class="bg-indigo-600 hover:bg-indigo-500 px-4 py-2 rounded-md font-semibold transition-colors duration-200">
+            {{ 'HEADER.LOGIN_BUTTON' | translate }}
+        </button>
+    </nav>
+</header>

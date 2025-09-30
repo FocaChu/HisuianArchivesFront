@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../../services/api.service';
-import { LoggerService } from '../../services/logger.service';
-import { HealthCheckResponse } from '../../models/health-check.model';
+import { ApiService } from '../../shared/services/api.service';
+import { LoggerService } from '../../shared/services/logger.service';
+import { HealthCheckResponse } from '../../core/models/health-check.model';
 import { CommonModule } from '@angular/common'; 
 
 @Component({

@@ -1,0 +1,29 @@
+{
+  "HEADER": {
+    "TITLE": "Hisuian Archives",
+    "NEW_DEX_BUTTON": "Nova Dex",
+    "NEW_SET_BUTTON": "Nova Coleção",
+    "LOGIN_BUTTON": "Entrar"
+  },
+  "FOOTER": {
+    "ABOUT_LINK": "Sobre",
+    "SOURCE_CODE_LINK": "Código Fonte",
+    "CONTACT_LINK": "Contato",
+    "COPYRIGHT": "Hisuian Archives por João Augusto Cordeiro"
+  },
+  "SIDEBAR": {
+    "HOME": "Início",
+    "MY_COLLECTIONS": "Minhas Coleções",
+    "MY_DEXES": "Minhas Dexes",
+    "MY_SETS": "Minhas Expansões",
+    "MY_TEAMS": "Meus Times",
+    "EXPLORE": "Explorar",
+    "POKEMON_COMPENDIUM": "Compêndio de Pokémons",
+    "MOVE_COMPENDIUM": "Compêndio de Movimentos",
+    "SETTINGS": "Configurações"
+  },
+  "SETTINGS_PAGE": {
+    "TITLE": "Configurações",
+    "LANGUAGE_LABEL": "Idioma do Site"
+  }
+}

@@ -1,0 +1,72 @@
+<div *ngIf="isMenuOpen" (click)="onCloseMenu()"
+    class="fixed inset-0 bg-black opacity-50 z-30 transition-opacity duration-300 ease-in-out">
+</div>
+
+<aside [ngClass]="{'translate-x-0': isMenuOpen, '-translate-x-full': !isMenuOpen}"
+    class="fixed top-0 left-0 h-full w-64 bg-gray-900 text-white shadow-xl z-40 transition-transform duration-300 ease-in-out overflow-hidden"
+    tabindex="-1" role="menu" id="sidebar-menu">
+
+    <div class="p-4 h-full flex flex-col">
+
+        <div class="flex flex-col items-center pt-4 mb-4 flex-shrink-0">
+            <img src="favicon.ico" alt="Poké Ball Logo" class="w-16 h-16 mb-2">
+            <h2 class="text-lg font-bold text-indigo-400">UserName</h2>
+            <a routerLink="/profile" (click)="onCloseMenu()"
+                class="text-xs text-gray-400 hover:text-indigo-400 transition-colors duration-150 cursor-pointer mt-1">Ver
+                Perfil</a>
+        </div>
+
+        <nav class="flex flex-col space-y-1 flex-grow overflow-y-auto">
+
+            <a routerLink="/" (click)="onCloseMenu()"
+                class="text-base font-semibold py-1 px-3 hover:bg-gray-700 rounded transition-colors duration-150">
+                <i class="fas fa-home mr-2"></i> {{ 'SIDEBAR.HOME' | translate }}
+            </a>
+
+            <div>
+                <h3 class="text-xs uppercase tracking-wider text-gray-400 pt-2 pb-1 mt-4">{{ 'SIDEBAR.MY_COLLECTIONS' |
+                    translate }}</h3>
+                <a routerLink="/" (click)="onCloseMenu()"
+                    class="block py-1 px-3 hover:bg-gray-700 rounded transition-colors duration-150 cursor-pointer">
+                    <i class="fas fa-bolt mr-2"></i>{{ 'SIDEBAR.MY_DEXES' | translate }}
+                </a>
+
+                <a routerLink="/" (click)="onCloseMenu()"
+                    class="block py-1 px-3 hover:bg-gray-700 rounded transition-colors duration-150 cursor-pointer">
+                    <i class="fas fa-bolt mr-2"></i>{{ 'SIDEBAR.MY_SETS' | translate }}
+                </a>
+
+                <a routerLink="/" (click)="onCloseMenu()"
+                    class="block py-1 px-3 hover:bg-gray-700 rounded transition-colors duration-150 cursor-pointer">
+                    <i class="fas fa-bolt mr-2"></i>{{ 'SIDEBAR.MY_TEAMS' | translate }}
+                </a>
+            </div>
+
+            <div>
+                <h3 class="text-xs uppercase tracking-wider text-gray-400 pt-2 pb-1 mt-4">{{ 'SIDEBAR.EXPLORE' |
+                    translate }}</h3>
+                <a routerLink="/" (click)="onCloseMenu()"
+                    class="block py-1 px-3 hover:bg-gray-700 rounded transition-colors duration-150 cursor-pointer">
+                    <i class="fas fa-bolt mr-2"></i>{{ 'SIDEBAR.POKEMON_COMPENDIUM' | translate }}
+                </a>
+
+                <a routerLink="/" (click)="onCloseMenu()"
+                    class="block py-1 px-3 hover:bg-gray-700 rounded transition-colors duration-150 cursor-pointer">
+                    <i class="fas fa-bolt mr-2"></i>{{ 'SIDEBAR.MOVE_COMPENDIUM' | translate }}
+                </a>
+            </div>
+
+            <div>
+                <h3 class="text-xs uppercase tracking-wider text-gray-400 pt-2 pb-1 mt-4">{{ 'SIDEBAR.SETTINGS' |
+                    translate }}</h3>
+                <a routerLink="/settings" (click)="onCloseMenu()"
+                    class="block py-1 px-3 hover:bg-gray-700 rounded transition-colors duration-150 cursor-pointer">
+                    <i class="fas fa-bolt mr-2"></i>{{ 'SIDEBAR.SETTINGS' | translate }}
+                </a>
+            </div>
+
+        </nav>
+
+    </div>
+
+</aside>

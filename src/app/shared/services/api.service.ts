@@ -1,8 +1,8 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http'; 
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { environment } from '../../environments/environment';
-import { HealthCheckResponse } from '../models/health-check.model';
+import { environment } from '../../../environments/environment';
+import { HealthCheckResponse } from '../../core/models/health-check.model';
 
 @Injectable({
   providedIn: 'root'

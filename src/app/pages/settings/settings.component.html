@@ -1,0 +1,12 @@
+<div class="settings-page">
+  <h1>{{ 'SETTINGS_PAGE.TITLE' | translate }}</h1>
+
+  <div class="form-group">
+    <label for="language-select">{{ 'SETTINGS_PAGE.LANGUAGE_LABEL' | translate }}</label>
+    <select id="language-select" [ngModel]="currentLanguage" (ngModelChange)="onLanguageChange($event)">
+      <option value="pt-BR">Português (Brasil)</option>
+      <option value="en">English</option>
+      <option value="es">Español</option>
+    </select>
+  </div>
+</div>
