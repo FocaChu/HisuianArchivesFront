@@ -1,0 +1,8 @@
+<div *ngIf="userProfile$ | async as user">
+
+  <h1>Perfil de {{ user.name }}</h1>
+  
+  <p><strong>Email:</strong> {{ user.email }}</p>
+  <p><strong>Bio:</strong> {{ user.bio }}</p>
+
+</div>
