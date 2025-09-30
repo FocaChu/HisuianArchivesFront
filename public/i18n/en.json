@@ -12,6 +12,7 @@
     "COPYRIGHT": "Hisuian Archives by João Augusto Cordeiro"
   },
   "SIDEBAR": {
+    "LOGIN_BUTTON": "Login",
     "HOME": "Home",
     "MY_COLLECTIONS": "My Collections",
     "MY_DEXES": "My Dexes",
