@@ -23,8 +23,61 @@
     "MOVE_COMPENDIUM": "Move Compendium",
     "SETTINGS": "Settings"
   },
+  "HOME_PAGE": {
+    "TITLE": "Welcome to Hisuian Archives",
+    "SUBTITLE": "Your ultimate platform for creating custom Pokémon content."
+  },
   "SETTINGS_PAGE": {
     "TITLE": "Settings",
-    "LANGUAGE_LABEL": "Site Language"
+    "SUBTITLE": "Manage your account preferences and settings.",
+    "GENERAL_SUBTITLE": "General",
+    "LANGUAGE_LABEL": "Site Language",
+    "ACTIONS_TITLE": "Account Actions",
+    "LOGOUT_BUTTON": "Logout"
+  },
+  "COMMON": {
+    "FORM_FIELDS": {
+      "EMAIL_LABEL": "Email",
+      "PASSWORD_LABEL": "Password",
+      "NAME_LABEL": "Name",
+      "BIOGRAPHY_LABEL": "Bio",
+      "OPTIONAL": " (Optional)"
+    },
+    "VALIDATION": {
+      "NAME_REQUIRED": "A name is required.",
+      "EMAIL_REQUIRED": "A valid email is required.",
+      "PASSWORD_REQUIRED": "Password is required.",
+      "NAME_PLACEHOLDER": "Your full name",
+      "EMAIL_PLACEHOLDER": "your@email.com",
+      "BIOGRAPHY_PLACEHOLDER": "Talk a bit about yourself..."
+    }
+  },
+  "LOGIN_PAGE": {
+    "TITLE": "Access Your Account",
+    "LOGIN_BUTTON": "Login",
+    "FORGOT_PASSWORD_LINK": "Forgot your password?",
+    "NO_ACCOUNT_QUESTION": "Don't have an account?",
+    "REGISTER_LINK": "Register here"
+  },
+  "REGISTER_PAGE": {
+    "TITLE": "Create Your Account",
+    "SUBMIT_BUTTON": "Register",
+    "HAVE_ACCOUNT_QUESTION": "Already have an account?",
+    "LOGIN_LINK": "Login here"
+  },
+  "ABOUT_PAGE": {
+    "TITLE": "About Hisuian Archives",
+    "DESCRIPTION": "Hisuian Archives is a platform dedicated to helping Pokémon fans organize and manage their creations like fakemons and custom cards, and also share them with other members of the community.",
+    "HISTORY_SECTIONS": {
+      "TITLE": "The Story Behind Hisuian Archives",
+      "PARAGRAPH_1": "The Hisuian Archives project was born from a desire to practice and deepen the software development skills I acquired in the Entra21 program. As a huge Pokémon fan since childhood, I have always consumed and produced a lot of content for the community, but I always felt a significant lack of creative tools that were both organized and flexible. The best platforms for creating custom cards are in English, with little room for creativity outside the strict rules of the official TCG, and I have never found a truly practical Pokédex creator. With that in mind, I had the idea of honing my skills by creating my own platform. This is a project I have been developing entirely solo, from its ideation and architecture to implementation.",
+      "PARAGRAPH_2": "The inspiration came from my experience with the Final Course Project (TCC) of the program. It being my first time as a team leader and developer, I made many mistakes, and in the end, despite achieving a decent result, I couldn't see myself in the product we delivered.",
+      "PARAGRAPH_3": "Based on this, I decided I should start a new and ambitious project to work on all my skills and explore the technologies I discovered throughout the course. I chose the Pokémon theme because it is a subject I have mastered and has a wide scope, which allowed the blueprint of the Entity-Relationship Diagram (ERD) to be built in just 19 hours over a week. This ensured a stable data foundation, minimizing the need for major architectural changes and making the project structure more robust.",
+      "PARAGRAPH_4": "Shortly after the first phase of structuring the project's Back-end, a critical limitation was found: my hardware. With only a 4GB RAM laptop, running the frontend, the API, and the Docker containers simultaneously was unfeasible. Instead of giving up, I decided to treat the limitation as an architectural requirement. The solution was to adopt a CI/CD workflow from day one, with the frontend running in the cloud (Vercel) and the API locally, communicating through tunnels (ngrok).",
+      "PARAGRAPH_5": "The need to compensate for hardware limitations with efficient code led me to study Software Architecture and Engineering concepts. This resulted in several planned hiatuses, where I paused to study and organize my college schedule. After these periods, I was able to apply Clean Architecture concepts and gain a much deeper understanding of the project's internal needs. I admit there were difficulties, such as the language barrier, as most advanced content was in English or Korean.",
+      "PARAGRAPH_6": "To overcome the challenges of a distributed development environment without a traditional frontend debugger, I created pragmatic solutions: scripts to automate route updates and the commit process, a dedicated `LoggerService` for debugging, and tests in private repositories. I ensured that security and testability were priorities from the first line of code, not future implementations.",
+      "PARAGRAPH_7": "Even with all the optimizations, RAM limitations still proved to be a challenge, leading to crashes that required restarting the system in certain cases. Despite everything, the project is progressing and has been an incredibly fun and rewarding journey.",
+      "PARAGRAPH_8": "All code and documentation can be easily accessed through the \"Source Code\" link in the footer."
+    }
   }
 }

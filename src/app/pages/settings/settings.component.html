@@ -1,12 +1,57 @@
-<div class="settings-page">
-  <h1>{{ 'SETTINGS_PAGE.TITLE' | translate }}</h1>
+<div class="min-h-screen bg-gray-50 p-6 sm:p-10" id="settings-page-container">
+  <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-xl p-6 sm:p-10">
+    
+    <header class="border-b pb-4 mb-6">
+      <h1 class="text-3xl font-bold text-gray-900">
+        {{ 'SETTINGS_PAGE.TITLE' | translate }}
+      </h1>
+      <p class="text-gray-500 mt-1">
+        {{ 'SETTINGS_PAGE.SUBTITLE' | translate }}
+      </p>
+    </header>
 
-  <div class="form-group">
-    <label for="language-select">{{ 'SETTINGS_PAGE.LANGUAGE_LABEL' | translate }}</label>
-    <select id="language-select" [ngModel]="currentLanguage" (ngModelChange)="onLanguageChange($event)">
-      <option value="pt-BR">Português (Brasil)</option>
-      <option value="en">English</option>
-      <option value="es">Español</option>
-    </select>
+    <div class="space-y-8">
+      
+      <section class="p-6 border border-gray-200 rounded-lg bg-gray-50">
+        <h2 class="text-xl font-semibold text-gray-800 mb-4">
+          {{ 'SETTINGS_PAGE.GENERAL_SUBTITLE' | translate }}
+        </h2>
+
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between py-3 border-b last:border-b-0">
+          <label for="language-select" class="block text-sm font-medium text-gray-700 mb-2 sm:mb-0">
+            {{ 'SETTINGS_PAGE.LANGUAGE_LABEL' | translate }}
+          </label>
+          <div class="relative w-full sm:w-auto">
+            <select
+              id="language-select"
+              [ngModel]="currentLanguage"
+              (ngModelChange)="onLanguageChange($event)"
+              class="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-400 px-4 py-2 pr-8 rounded-lg shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm"
+            >
+              <option value="pt-BR">Português (Brasil)</option>
+              <option value="en">English</option>
+              <option value="es">Español</option>
+            </select>
+            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+              <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <section class="p-6 border border-gray-200 rounded-lg bg-red-50">
+        <h2 class="text-xl font-semibold text-gray-800 mb-4"> {{ 'SETTINGS_PAGE.ACTIONS_TITLE' | translate }}</h2>
+        
+        <button
+          class="logout-button w-full sm:w-auto flex justify-center py-2 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition duration-150 ease-in-out"
+          (click)="onLogout()"
+        >
+          {{ 'SETTINGS_PAGE.LOGOUT_BUTTON' | translate }}
+        </button>
+        
+      </section>
+
+    </div>
   </div>
 </div>

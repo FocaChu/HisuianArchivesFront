@@ -4,15 +4,17 @@ import { Router, RouterModule } from '@angular/router';
 import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms'; 
 import { AuthService } from '../../shared/services/auth.service';
 import { LoginRequestDto } from '../../core/models/auth.model';
+import { TranslatePipe } from '../../shared/pipes/translate.pipe';
 
 @Component({
   selector: 'app-login',
   standalone: true,
   imports: [
     CommonModule,
-    RouterModule, 
-    ReactiveFormsModule 
-  ],
+    RouterModule,
+    ReactiveFormsModule,
+    TranslatePipe
+],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
@@ -29,6 +31,8 @@ export class LoginComponent implements OnInit {
       password: new FormControl('', [Validators.required])
     });
   }
+
+  
 
   onSubmit(): void {
     if (this.loginForm.invalid) {

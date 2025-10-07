@@ -2,12 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../shared/services/api.service';
 import { LoggerService } from '../../shared/services/logger.service';
 import { HealthCheckResponse } from '../../core/models/health-check.model';
-import { CommonModule } from '@angular/common'; 
+import { CommonModule } from '@angular/common';
+import { TranslatePipe } from "../../shared/pipes/translate.pipe"; 
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslatePipe],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })

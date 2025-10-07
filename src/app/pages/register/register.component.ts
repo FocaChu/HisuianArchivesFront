@@ -4,14 +4,16 @@ import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angula
 import { Router } from '@angular/router';
 import { AuthService } from '../../shared/services/auth.service';
 import { RegisterRequestDto } from '../../core/models/auth.model';
+import { TranslatePipe } from "../../shared/pipes/translate.pipe";
 
 @Component({
   selector: 'app-register',
   standalone: true,
   imports: [
     CommonModule,
-    ReactiveFormsModule
-  ],
+    ReactiveFormsModule,
+    TranslatePipe
+],
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })

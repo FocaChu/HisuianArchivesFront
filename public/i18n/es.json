@@ -23,8 +23,62 @@
     "MOVE_COMPENDIUM": "Compendio de Movimientos",
     "SETTINGS": "Configuraciones"
   },
+  "HOME_PAGE": {
+    "TITLE": "Bienvenido a Hisuian Archives",
+    "SUBTITLE": "Tu plataforma definitiva para crear contenido personalizado de Pokémon."
+  },
   "SETTINGS_PAGE": {
     "TITLE": "Configuraciones",
-    "LANGUAGE_LABEL": "Idioma del Sitio"
+    "SUBTITLE": "Administra tus preferencias y configuraciones de cuenta.",
+    "GENERAL_SUBTITLE": "General",
+    "LANGUAGE_LABEL": "Idioma del Sitio",
+    "ACTIONS_TITLE": "Acciones de la Cuenta",
+    "LOGOUT_BUTTON": "Cerrar Sesión"
+  },
+  "COMMON": {
+    "LABELS": {
+      "EMAIL": "Correo Electrónico",
+      "PASSWORD": "Contraseña",
+      "CONFIRM_PASSWORD": "Confirmar Contraseña",
+      "NAME": "Nombre",
+      "BIOGRAPHY": "Biografía",
+      "OPTIONAL": " (Opcional)"
+    },
+    "VALIDATION": {
+      "NAME_REQUIRED": "Se requiere un nombre.",
+      "EMAIL_REQUIRED": "Se requiere un correo electrónico válido.",
+      "PASSWORD_REQUIRED": "La contraseña es obligatoria.",
+      "NAME_PLACEHOLDER": "Tu nombre completo",
+      "EMAIL_PLACEHOLDER": "tu@email.com",
+      "BIOGRAPHY_PLACEHOLDER": "Cuéntanos un poco sobre ti..."
+    }
+  },
+  "LOGIN_PAGE": {
+    "TITLE": "Accede a tu cuenta",
+    "LOGIN_BUTTON": "Iniciar Sesión",
+    "FORGOT_PASSWORD_LINK": "¿Olvidaste tu contraseña?",
+    "NO_ACCOUNT_QUESTION": "¿No tienes una cuenta?",
+    "REGISTER_LINK": "Regístrate aquí"
+  },
+  "REGISTER_PAGE": {
+    "TITLE": "Crea tu cuenta",
+    "REGISTER_BUTTON": "Registrar",
+    "HAVE_ACCOUNT_QUESTION": "¿Ya tienes una cuenta?",
+    "LOGIN_LINK": "Inicia sesión aquí"
+  },
+  "ABOUT_PAGE": {
+    "TITLE": "Sobre Hisuian Archives",
+    "DESCRIPTION": "Hisuian Archives es una plataforma dedicada a ayudar a los fans de Pokémon a organizar y gestionar sus creaciones como fakemons y cartas personalizadas, y también a compartirlas con otros miembros de la comunidad.",
+    "HISTORY_SECTIONS": {
+      "TITLE": "La Historia Detrás de Hisuian Archives",
+      "PARAGRAPH_1": "El proyecto Hisuian Archives nació del deseo de poner en práctica y profundizar mis habilidades en desarrollo de software, adquiridas en el programa Entra21. Como gran fan de Pokémon desde la infancia, siempre he consumido y producido mucho contenido para la comunidad, pero sentía una gran falta de herramientas de creación que fueran organizadas y flexibles. Las mejores plataformas para crear cartas personalizadas están en inglés, con poca apertura a la creatividad fuera de las estrictas reglas del TCG oficial, y nunca he encontrado un creador de Pokédex que fuera verdaderamente práctico. Con eso, tuve la idea de mejorar mis habilidades creando mi propia plataforma. Este es un proyecto que he estado desarrollando completamente en solitario, desde su ideación y arquitectura hasta la implementación.",
+      "PARAGRAPH_2": "La inspiración vino de mi experiencia con el Trabajo de Fin de Curso (TCC) del programa. Siendo mi primera vez como líder de equipo y desarrollador, cometí muchos errores y, al final, a pesar de lograr un resultado decente, no podía verme a mí mismo en el producto que entregamos.",
+      "PARAGRAPH_3": "Basado en esto, decidí que debía comenzar un proyecto nuevo y ambicioso para trabajar en todas mis habilidades y explorar las tecnologías que descubrí a lo largo del curso. Elegí el tema de Pokémon por ser un asunto que domino y tiene un amplio alcance, lo que permitió que el blueprint del Diagrama de Entidad-Relación (DER) se construyera en solo 19 horas a lo largo de una semana. Esto aseguró una base de datos estable, minimizando la necesidad de grandes cambios en la arquitectura y haciendo la estructura del proyecto más robusta.",
+      "PARAGRAPH_4": "Poco después de la primera fase de estructuración del Back-end, se encontró una limitación crítica: mi hardware. Con solo un portátil de 4GB de RAM, ejecutar el frontend, la API y los contenedores de Docker simultáneamente era inviable. En lugar de rendirme, decidí tratar la limitación como un requisito de arquitectura. La solución fue adoptar un flujo de trabajo de CI/CD desde el primer día, con el frontend ejecutándose en la nube (Vercel) y la API localmente, comunicándose a través de túneles (ngrok).",
+      "PARAGRAPH_5": "La necesidad de compensar las limitaciones del hardware con código eficiente me llevó a estudiar conceptos de Arquitectura e Ingeniería de Software. Esto resultó en varios hiatos planificados, donde hacía pausas para estudiar y organizar mi agenda con la universidad. Después de estos períodos, pude aplicar conceptos de Clean Architecture y obtener una comprensión mucho más profunda de las necesidades internas del proyecto. Admito que hubo dificultades, como la barrera del idioma, ya que la mayoría del contenido avanzado estaba en inglés o coreano.",
+      "PARAGRAPH_6": "Para superar los desafíos de un entorno de desarrollo distribuido sin un depurador de frontend tradicional, creé soluciones pragmáticas: scripts para automatizar las actualizaciones de rutas y el proceso de commit, un `LoggerService` dedicado a la depuración y pruebas en repositorios privados. Me aseguré de que la seguridad y la capacidad de prueba fueran prioridades desde la primera línea de código, no implementaciones futuras.",
+      "PARAGRAPH_7": "Incluso con todas las optimizaciones, las limitaciones de RAM siguieron siendo un desafío, llevando a bloqueos que requirieron reiniciar el sistema en ciertos casos. A pesar de todo, el proyecto sigue progresando y ha sido un viaje increíblemente divertido y gratificante.",
+      "PARAGRAPH_8": "Todo el código y la documentación se pueden acceder fácilmente a través del enlace \"Código Fuente\" en el pie de página."
+    }
   }
 }

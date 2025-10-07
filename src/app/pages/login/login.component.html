@@ -1,29 +1,75 @@
-<div>
-  <h1>Página de Login</h1>
+<div class="min-h-screen flex items-center justify-center bg-gray-100 p-4" id="login-page-container">
+  <div class="w-full max-w-md bg-white rounded-xl shadow-2xl p-8 space-y-6">
+    <h1 class="text-3xl font-extrabold text-gray-900 text-center">
+      {{ 'LOGIN_PAGE.TITLE' | translate }}
+    </h1>
 
-  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="space-y-6">
 
-    <div>
-      <label for="email">Email:</label>
-      <input type="email" id="email" formControlName="email" required>
+      <div>
+        <label for="email" class="block text-sm font-medium text-gray-700">
+          {{ 'COMMON.FORM_FIELDS.EMAIL_LABEL' | translate }}:
+        </label>
+        <div class="mt-1">
+          <input
+            type="email"
+            id="email"
+            formControlName="email"
+            required
+            placeholder="{{ 'COMMON.VALIDATION.EMAIL_PLACEHOLDER' | translate }}"
+            class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm transition duration-150 ease-in-out"
+            [ngClass]="{'border-red-500': loginForm.get('email')?.invalid && loginForm.get('email')?.touched}"
+          >
+          <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" class="text-red-600 text-xs mt-1">
+             {{ 'COMMON.VALIDATION.EMAIL_REQUIRED' | translate }}
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <label for="password" class="block text-sm font-medium text-gray-700">
+          {{ 'COMMON.FORM_FIELDS.PASSWORD_LABEL' | translate }}:
+        </label>
+        <div class="mt-1">
+          <input
+            type="password"
+            id="password"
+            formControlName="password"
+            required
+            placeholder="••••••••"
+            class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm transition duration-150 ease-in-out"
+            [ngClass]="{'border-red-500': loginForm.get('password')?.invalid && loginForm.get('password')?.touched}"
+          >
+          <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="text-red-600 text-xs mt-1">
+            {{ 'COMMON.VALIDATION.PASSWORD_REQUIRED' | translate }}
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <button
+          type="submit"
+          [disabled]="loginForm.invalid"
+          class="w-full flex justify-center py-2 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-150 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          {{ 'LOGIN_PAGE.LOGIN_BUTTON' | translate }}
+        </button>
+      </div>
+    </form>
+
+    <div *ngIf="errorMessage" class="text-center p-3 rounded-lg bg-red-100 border border-red-400 text-red-700" role="alert">
+      {{ errorMessage }}
     </div>
 
-    <div>
-      <label for="password">Senha:</label>
-      <input type="password" id="password" formControlName="password" required>
+    <div class="text-center text-sm">
+      <span class="font-light text-gray-600">
+        {{ 'LOGIN_PAGE.NO_ACCOUNT_QUESTION' | translate }}
+      </span>
+      
+      <a routerLink="/register" class="font-medium text-indigo-600 hover:text-indigo-500 ml-1">
+        {{ 'LOGIN_PAGE.REGISTER_LINK' | translate }}
+      </a>
     </div>
 
-    <button type="submit" [disabled]="loginForm.invalid">Entrar</button>
-
-  </form>
-
-  <div *ngIf="errorMessage" style="color: red; margin-top: 1rem;">
-    {{ errorMessage }}
   </div>
-
-  <div style="margin-top: 1rem;">
-    <span>Não tem uma conta?</span>
-    <a routerLink="/register">Registre-se aqui</a>
-  </div>
-
 </div>

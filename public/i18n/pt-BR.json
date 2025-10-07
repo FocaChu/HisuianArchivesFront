@@ -23,8 +23,62 @@
     "MOVE_COMPENDIUM": "Compêndio de Movimentos",
     "SETTINGS": "Configurações"
   },
+  "HOME_PAGE": {
+    "TITLE": "Bem-vindo ao Hisuian Archives",
+    "SUBTITLE": "Sua plataforma definitiva para criação de conteúdo pokémon customizado."
+  },
   "SETTINGS_PAGE": {
     "TITLE": "Configurações",
-    "LANGUAGE_LABEL": "Idioma do Site"
+    "SUBTITLE": "Gerencie suas preferências e configurações de conta.",
+    "GENERAL_SUBTITLE": "Geral",
+    "LANGUAGE_LABEL": "Idioma do Site",
+    "ACTIONS_TITLE": "Ações da Conta",
+    "LOGOUT_BUTTON": "Sair"
+  },
+  "COMMON": {
+    "LABELS": {
+      "EMAIL": "E-mail",
+      "PASSWORD": "Senha",
+      "CONFIRM_PASSWORD": "Confirmar Senha",
+      "NAME": "Nome",
+      "BIOGRAPHY": "Biografia",
+      "OPTIONAL": " (Opcional)"
+    },
+    "VALIDATION": {
+      "NAME_REQUIRED": "Um nome é obrigatório.",
+      "EMAIL_REQUIRED": "Um e-mail válido é obrigatório.",
+      "PASSWORD_REQUIRED": "A senha é obrigatória.",
+      "NAME_PLACEHOLDER": "Seu nome completo",
+      "EMAIL_PLACEHOLDER": "seu@email.com",
+      "BIOGRAPHY_PLACEHOLDER": "Fale um pouco sobre você..."
+    }
+  },
+  "LOGIN_PAGE": {
+    "TITLE": "Acesse sua conta",
+    "LOGIN_BUTTON": "Entrar",
+    "FORGOT_PASSWORD_LINK": "Esqueceu sua senha?",
+    "NO_ACCOUNT_QUESTION": "Não tem uma conta?",
+    "REGISTER_LINK": "Registre-se aqui"
+  },
+  "REGISTER_PAGE": {
+    "TITLE": "Crie sua conta",
+    "REGISTER_BUTTON": "Registrar",
+    "HAVE_ACCOUNT_QUESTION": "Já tem uma conta?",
+    "LOGIN_LINK": "Faça login aqui"
+  },
+  "ABOUT_PAGE": {
+    "TITLE": "Sobre o Hisuian Archives",
+    "DESCRIPTION": "O Hisuian Archives é uma plataforma dedicada a ajudar fãs de Pokémon a organizar e gerenciar suas criações como fakemons, cartas custom e ainda compartilhar elas com outros membros da comunidade.",
+    "HISTORY_SECTIONS": {
+      "TITLE": "A história por trás do Hisuian Archives",
+      "PARAGRAPH_1": "O projeto Hisuian Archives nasceu de um desejo de pôr em prática e aprofundar minhas habilidades em desenvolvimento de software, adquiridas no programa Entra21. Como grande fã de Pokémon desde a infância, sempre consumi e produzi muito conteúdo para a comunidade, mas sentia uma grande falta de ferramentas de criação que fossem organizadas e flexíveis. As melhores plataformas de criação de cartas customizadas são em inglês, com pouca abertura para criatividade fora das rígidas regras do TCG oficial, e nunca encontrei um criador de Pokédex que fosse verdadeiramente prático. Com isso, tive a ideia de aprimorar minhas habilidades criando minha própria plataforma. Este é um projeto que venho desenvolvendo inteiramente solo, desde sua ideação e arquitetura até a implementação.",
+      "PARAGRAPH_2": "A inspiração veio da minha experiência com o Trabalho de Conclusão de Curso (TCC) do programa. Sendo minha primeira vez como líder de uma equipe e como desenvolvedor, cometi muitos erros e, ao final, mesmo atingindo um resultado decente, eu não conseguia me ver no produto que entregamos.",
+      "PARAGRAPH_3": "Com base nisso eu decidi que deveria começar um projeto novo e ambicioso para eu poder trabalhar todas as minhas habilidades e explorar as tecnologias que eu descobri ao longo do curso. Escolhi o tema pokémon por ser um assunto que tenho maestria e escopo alto, oque fez o desenvolvimento da versão 1.0 do Diagrama de Entidade-Relação (DER) que engloba todo o projeto ser confeccionado em apenas 19 horas distribuídas ao longo de uma semana, o que garantiu uma fundação de dados estável, minimizando a necessidade de grandes mudanças na arquitetura e tornando a estrutura do projeto mais robusta.",
+      "PARAGRAPH_4": "Logo após primeira fase de estruturação do Back-end do projeto. Foi encontrada uma limitação crítica que impediria o desenvolvimento do projeto: meu hardware. Tenho apenas um notebook simples com 4 gigas de ram. Com metade da potência necessária, rodar o frontend, a API e os containers Docker simultaneamente era inviável. Invés de desistir, tomei um tempo para pensar e decidi tratar a limitação como um requisito de arquitetura. Após analisar todas as opções disponíveis, decidi que a coisa mais viável no momento seria desde o primeiro dia adotar um fluxo de trabalho CI/CD, com o Front rodando na nuvem através de um deploy gratuito pelo Vercel e a API rodando localmente utilizando túneis pelo ngrok para se comunicarem. ",
+      "PARAGRAPH_5": "A necessidade de compensar as limitações do hardware com um código eficiente me fez ir atrás de estudar conceitos de Arquitetura e Engenharia de Software mesmo em meu primeiro ano na área da programação. Isso levou a vários pequenos hiatos, onde eu fazia pausas para estudar e ainda tentar organizar minha faculdade na agenda. Após períodos de estudos, consegui aplicar conceitos de Clean Arquitecture e ter um entendimento melhor sobre as necessidades internas do projeto e sua arquitetura. Admito que houveram bastante dificuldades, foi um salto grande de dificuldade e precisei superar a barreira do idioma, já que a maioria dos conteúdos avançados estava em inglês ou coreano.",
+      "PARAGRAPH_6": "O projeto usa de recursos 100% gratuitos, oque aumenta bastante as limitações. Antes mesmo de começar a programação eu já trabalhei na análise de pontos de atenção e potenciais problemas. Sem o terminal de depuração, o Front-end e seu debug seria uma grande fonte de estresse e consumo de tempo, para contornar esses problemas foi necessário a criação de Scripts para automatizar processos de atualização de rotas para os túneis da API e confecções de commits, testes em ambientes simulados em outros repositórios privados, além de um LoggerService dedicado as logs e depuração. Eu quis garantir que desde as primeiras versões do código, tanto segurança quanto testabilidade fossem prioridade desde a primeira linha de código e não implementações para o futuro.",
+      "PARAGRAPH_7": "Mesmo utilizando o mínimo de aplicativos possíveis e trabalhando com paciência, ainda ocorreram muitas limitações de Ram que levaram à morte total do terminal do Power Shell exigindo reiniciar o sistema manualmente em certos casos. Apesar de todas as dificuldades, o projeto segue em progresso e com expectativas positivas para seu desenvolvimento. Tem sido muito divertido e gratificante trabalhar nesse projeto.",
+      "PARAGRAPH_8": "Todo o código e documentação podem ser facilmente acessados pelo acesso rápido \"Código Fonte\" no rodapé."
+    }
   }
 }
