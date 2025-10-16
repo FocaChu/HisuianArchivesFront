@@ -35,18 +35,17 @@
     "ACTIONS_TITLE": "Ações da Conta",
     "LOGOUT_BUTTON": "Sair"
   },
-  "COMMON": {
-    "LABELS": {
-      "EMAIL": "E-mail",
-      "PASSWORD": "Senha",
-      "CONFIRM_PASSWORD": "Confirmar Senha",
-      "NAME": "Nome",
-      "BIOGRAPHY": "Biografia",
+"COMMON": {
+    "FORM_FIELDS": {
+      "EMAIL_LABEL": "Email",
+      "PASSWORD_LABEL": "Senha",
+      "NAME_LABEL": "Nome",
+      "BIOGRAPHY_LABEL": "Bio",
       "OPTIONAL": " (Opcional)"
     },
     "VALIDATION": {
-      "NAME_REQUIRED": "Um nome é obrigatório.",
-      "EMAIL_REQUIRED": "Um e-mail válido é obrigatório.",
+      "NAME_REQUIRED": "O nome é obrigatório.",
+      "EMAIL_REQUIRED": "Um email válido é obrigatório.",
       "PASSWORD_REQUIRED": "A senha é obrigatória.",
       "NAME_PLACEHOLDER": "Seu nome completo",
       "EMAIL_PLACEHOLDER": "seu@email.com",
