@@ -8,7 +8,8 @@ import { environment } from '../../../environments/environment'; // Importa o ar
   providedIn: 'root'
 })
 export class ApiService {
-  private apiUrl = environment.apiUrl; // Usa a URL da API do ambiente
+  private apiUrl = environment.apiUrl;
+  private baseUrl = environment.baseUrl;
 
   constructor(private http: HttpClient) { }
 
@@ -29,6 +30,6 @@ export class ApiService {
   }
 
   healthCheck(): Observable<HealthCheckResponse> {
-    return this.http.get<HealthCheckResponse>(`${this.apiUrl}/health`);
+    return this.http.get<HealthCheckResponse>(`${this.baseUrl}/health`);
   }
 }
