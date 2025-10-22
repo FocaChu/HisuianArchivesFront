@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../../core/services/auth.service';
+import { NotificationService } from '../../../core/services/notification.service';
 import { RegisterRequestDto } from '../../../core/models/auth.model';
 import { TranslatePipe } from '../../../shared/pipes/translate.pipe';
 import { ButtonComponent } from "../../../shared/components/button.component";
@@ -25,7 +26,11 @@ export class RegisterComponent implements OnInit {
   registerForm!: FormGroup;
   errorMessage: string | null = null;
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(
+    private authService: AuthService, 
+    private notificationService: NotificationService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.registerForm = new FormGroup({
@@ -46,14 +51,16 @@ export class RegisterComponent implements OnInit {
 
     this.authService.register(registerData).subscribe({
       next: (response) => {
-        console.log('Registro bem-sucedido!', response);
+        this.notificationService.success('Cadastro realizado com sucesso!');
       },
       error: (err) => {
         console.error('Falha no registro', err);
         if (err.error && err.error.error) {
           this.errorMessage = err.error.error; 
+          this.notificationService.error(err.error.error);
         } else {
           this.errorMessage = 'Ocorreu um erro durante o registro. Tente novamente.';
+          this.notificationService.error('Ocorreu um erro durante o registro. Tente novamente.');
         }
       }
     });

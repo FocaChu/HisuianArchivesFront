@@ -7,11 +7,12 @@ import { AuthService } from '../../core/services/auth.service';
 import { UserSummaryResponseDto } from '../../core/models/auth.model';
 import { Observable } from 'rxjs';
 import { ButtonComponent } from '../../shared/components/button.component';
+import { AvatarComponent } from '../../shared/components/avatar.component';
 
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [CommonModule, RouterLink, TranslatePipe, ButtonComponent],
+  imports: [CommonModule, RouterLink, TranslatePipe, ButtonComponent, AvatarComponent],
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss']
 })

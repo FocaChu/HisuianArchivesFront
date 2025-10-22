@@ -1,8 +1,80 @@
-<div *ngIf="userProfile$ | async as user">
+<div *ngIf="userProfile$ | async as user" class="max-w-2xl mx-auto mt-8 p-6 bg-white rounded-lg shadow-md">
+  <div class="flex items-center justify-between mb-6">
+    <h1 class="text-3xl font-bold text-gray-900">Perfil de {{ user.name }}</h1>
+    <button
+      (click)="goToEditProfile()"
+      class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+    >
+      Editar Perfil
+    </button>
+  </div>
 
-  <h1>Perfil de {{ user.name }}</h1>
-  
-  <p><strong>Email:</strong> {{ user.email }}</p>
-  <p><strong>Bio:</strong> {{ user.bio }}</p>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <!-- Informações do usuário -->
+    <div class="space-y-4">
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Email</label>
+        <p class="mt-1 text-sm text-gray-900">{{ user.email }}</p>
+      </div>
+      
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Bio</label>
+        <p class="mt-1 text-sm text-gray-900">{{ user.bio || 'Nenhuma bio informada' }}</p>
+      </div>
 
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Membro desde</label>
+        <p class="mt-1 text-sm text-gray-900">{{ formatDate(user.created) }}</p>
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Última atualização</label>
+        <p class="mt-1 text-sm text-gray-900">{{ formatDate(user.lastModified) }}</p>
+      </div>
+    </div>
+
+    <!-- Imagem de perfil -->
+    <div class="space-y-4">
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-2">Foto de Perfil</label>
+        <div class="flex flex-col items-center space-y-4">
+          <app-avatar 
+            [imageId]="user.profileImageId" 
+            [userName]="user.name" 
+            size="xl">
+          </app-avatar>
+          
+          <div class="flex flex-col space-y-2">
+            <input
+              type="file"
+              #fileInput
+              accept="image/*"
+              (change)="onFileSelected($event)"
+              class="hidden"
+            />
+            <button
+              type="button"
+              (click)="fileInput.click()"
+              [disabled]="isUploading"
+              class="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              <span *ngIf="!isUploading">Escolher Foto</span>
+              <span *ngIf="isUploading">Enviando...</span>
+            </button>
+            
+            <button
+              *ngIf="selectedImageId"
+              type="button"
+              (click)="setAsProfileImage()"
+              [disabled]="isSettingProfile"
+              class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              <span *ngIf="!isSettingProfile">Definir como Perfil</span>
+              <span *ngIf="isSettingProfile">Definindo...</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
 import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms'; 
 import { AuthService } from '../../../core/services/auth.service';
+import { NotificationService } from '../../../core/services/notification.service';
 import { LoginRequestDto } from '../../../core/models/auth.model';
 import { TranslatePipe } from '../../../shared/pipes/translate.pipe';
 import { ButtonComponent } from '../../../shared/components/button.component';
@@ -25,7 +26,11 @@ export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
   errorMessage: string | null = null;
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(
+    private authService: AuthService, 
+    private notificationService: NotificationService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.loginForm = new FormGroup({
@@ -33,8 +38,6 @@ export class LoginComponent implements OnInit {
       password: new FormControl('', [Validators.required])
     });
   }
-
-  
 
   onSubmit(): void {
     if (this.loginForm.invalid) {
@@ -47,11 +50,12 @@ export class LoginComponent implements OnInit {
 
     this.authService.login(credentials).subscribe({
       next: (response) => {
-        console.log('Login bem-sucedido!', response);
+        this.notificationService.success('Login realizado com sucesso!');
       },
       error: (err) => {
         console.error('Falha no login', err);
         this.errorMessage = 'E-mail ou senha inválidos. Tente novamente.';
+        this.notificationService.error('E-mail ou senha inválidos. Tente novamente.');
       }
     });
   }
