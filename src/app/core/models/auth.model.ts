@@ -18,9 +18,11 @@ export interface AuthResponseDto {
 export interface UserSummaryResponseDto {
   userId: string;
   name: string;
-  bio: string;
+  bio?: string;
   email: string;
-  profileImageId: string;
+  profileImageId?: string;
+  created: string;
+  lastModified: string;
 }
 
 export interface DecodedTokenDto {

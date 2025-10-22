@@ -92,4 +92,9 @@ export class AuthService {
   public getToken(): string | null {
     return localStorage.getItem('auth_token');
   }
+
+  public updateUserProfile(user: UserSummaryResponseDto): void {
+    localStorage.setItem('user_profile', JSON.stringify(user));
+    this.currentUserProfileSubject.next(user);
+  }
 }
