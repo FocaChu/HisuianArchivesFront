@@ -6,15 +6,16 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
   const authService = inject(AuthService);
   const authToken = authService.getToken();
 
-  if (authToken) {
-    const authReq = req.clone({
-      setHeaders: {
-        Authorization: `Bearer ${authToken}`
-      }
-    });
+  let headers = req.headers;
 
-    return next(authReq);
+  // Sempre adicionar o cabeçalho para pular o aviso do ngrok
+  headers = headers.set('ngrok-skip-browser-warning', '1');
+
+  if (authToken) {
+    headers = headers.set('Authorization', `Bearer ${authToken}`);
   }
 
-  return next(req);
+  const authReq = req.clone({ headers });
+
+  return next(authReq);
 };
