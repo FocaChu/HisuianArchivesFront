@@ -11,7 +11,7 @@ import { NotificationService, Notification } from '../../core/services/notificat
     <div class="fixed top-4 right-4 z-50 space-y-2">
       <div 
         *ngFor="let notification of notifications$ | async" 
-        class="max-w-sm w-full bg-white shadow-lg rounded-lg pointer-events-auto ring-1 ring-black ring-opacity-5 overflow-hidden"
+        class="min-w-80 max-w-md w-full bg-white shadow-lg rounded-lg pointer-events-auto ring-1 ring-black ring-opacity-5 overflow-hidden"
         [ngClass]="getNotificationClasses(notification.type)"
       >
         <div class="p-4">
@@ -30,8 +30,8 @@ import { NotificationService, Notification } from '../../core/services/notificat
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
-            <div class="ml-3 w-0 flex-1 pt-0.5">
-              <p class="text-sm font-medium text-gray-900">
+            <div class="ml-3 flex-1 pt-0.5">
+              <p class="text-sm font-medium text-gray-900 break-words">
                 {{ notification.message }}
               </p>
             </div>

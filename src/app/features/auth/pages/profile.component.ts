@@ -9,6 +9,7 @@ import { ImageService } from '../../../core/services/image.service';
 import { NotificationService } from '../../../core/services/notification.service';
 import { UpdateProfileImageRequestDto } from '../../../core/models/user.model';
 import { AvatarComponent } from '../../../shared/components/avatar.component';
+import { IMAGE_TYPES } from '../../../core/constants/image-types';
 
 @Component({
   selector: 'app-profile',
@@ -68,14 +69,28 @@ export class ProfileComponent implements OnInit, OnDestroy {
   uploadImage(file: File): void {
     this.isUploading = true;
     
-    this.imageService.uploadImage(file, 'Profile').subscribe({
+    this.imageService.uploadImage(file, IMAGE_TYPES.USER_PROFILE).subscribe({
       next: (response) => {
         this.selectedImageId = response.imageId;
         this.notificationService.success('Imagem enviada com sucesso!');
       },
       error: (err) => {
         console.error('Erro ao enviar imagem:', err);
-        this.notificationService.error('Erro ao enviar imagem. Tente novamente.');
+        
+        // Tratar diferentes tipos de erro
+        if (err.status === 400) {
+          if (err.error?.detail?.includes('Invalid ImageType')) {
+            this.notificationService.error('Tipo de imagem inválido. Use apenas imagens de perfil.');
+          } else {
+            this.notificationService.error('Arquivo inválido. Verifique o formato e tamanho da imagem.');
+          }
+        } else if (err.status === 405) {
+          this.notificationService.error('Método não permitido. Verifique se o endpoint está correto.');
+        } else if (err.status === 413) {
+          this.notificationService.error('Arquivo muito grande. Reduza o tamanho da imagem.');
+        } else {
+          this.notificationService.error('Erro ao enviar imagem. Tente novamente.');
+        }
       },
       complete: () => {
         this.isUploading = false;

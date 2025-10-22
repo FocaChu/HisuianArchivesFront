@@ -1,6 +1,8 @@
+import { ImageType } from '../constants/image-types';
+
 export interface ImageUploadRequestDto {
   file: File;
-  imageType: string;
+  imageType: ImageType;
 }
 
 export interface ImageUploadResponseDto {
