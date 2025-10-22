@@ -1,0 +1,14 @@
+<button
+  [type]="type"
+  [disabled]="disabled || loading"
+  [ngClass]="{
+    'btn-primary': variant === 'primary',
+    'btn-secondary': variant === 'secondary',
+    'btn-danger': variant === 'danger',
+    'btn-success': variant === 'success'
+  }"
+  (click)="onClick()"
+>
+  <ng-container *ngIf="!loading">{{ text }}</ng-container>
+  <span *ngIf="loading">Carregando...</span>
+</button>

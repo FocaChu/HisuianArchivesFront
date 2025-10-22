@@ -3,14 +3,15 @@ import { CommonModule } from '@angular/common';
 import { RouterLink, Router } from '@angular/router'; 
 import { TranslatePipe } from '../../shared/pipes/translate.pipe';
 import { HostListener } from '@angular/core';
-import { AuthService } from '../../shared/services/auth.service';
+import { AuthService } from '../../core/services/auth.service';
 import { UserSummaryResponseDto } from '../../core/models/auth.model';
 import { Observable } from 'rxjs';
+import { ButtonComponent } from '../../shared/components/button.component';
 
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [CommonModule, RouterLink, TranslatePipe],
+  imports: [CommonModule, RouterLink, TranslatePipe, ButtonComponent],
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss']
 })

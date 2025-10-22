@@ -1,20 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router, RouterModule } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms'; 
-import { AuthService } from '../../shared/services/auth.service';
-import { LoginRequestDto } from '../../core/models/auth.model';
-import { TranslatePipe } from '../../shared/pipes/translate.pipe';
+import { AuthService } from '../../../core/services/auth.service';
+import { LoginRequestDto } from '../../../core/models/auth.model';
+import { TranslatePipe } from '../../../shared/pipes/translate.pipe';
+import { ButtonComponent } from '../../../shared/components/button.component';
 
 @Component({
   selector: 'app-login',
   standalone: true,
   imports: [
     CommonModule,
-    RouterModule,
+    RouterLink,
     ReactiveFormsModule,
-    TranslatePipe
-],
+    TranslatePipe,
+    ButtonComponent
+  ],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })

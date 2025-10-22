@@ -16,23 +16,22 @@
     </div>
 
     <nav class="hidden md:flex items-center gap-4">
-        <button routerLink="/"
-        class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded-md transition-colors duration-200">
+        <app-button
+            [text]="'HEADER.NEW_DEX_BUTTON' | translate"
+            (clickEvent)="navigateTo('/')"
+            variant="secondary"
+        ></app-button>
 
-            {{ 'HEADER.NEW_DEX_BUTTON' | translate }}
-
-        </button>
-
-        <button routerLink="/"
-        class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded-md transition-colors duration-200">
-
-            {{ 'HEADER.NEW_SET_BUTTON' | translate }}
-
-        </button>
+        <app-button
+            [text]="'HEADER.NEW_SET_BUTTON' | translate"
+            (clickEvent)="navigateTo('/')"
+            variant="secondary"
+        ></app-button>
         
-        <button routerLink="/login"
-            class="bg-indigo-600 hover:bg-indigo-500 px-4 py-2 rounded-md font-semibold transition-colors duration-200">
-            {{ 'HEADER.LOGIN_BUTTON' | translate }}
-        </button>
+        <app-button
+            [text]="'HEADER.LOGIN_BUTTON' | translate"
+            (clickEvent)="navigateTo('/login')"
+            variant="primary"
+        ></app-button>
     </nav>
 </header>

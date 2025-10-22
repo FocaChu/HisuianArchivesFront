@@ -1,19 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
-import { AuthService } from '../../shared/services/auth.service';
-import { RegisterRequestDto } from '../../core/models/auth.model';
-import { TranslatePipe } from "../../shared/pipes/translate.pipe";
+import { Router, RouterLink } from '@angular/router';
+import { AuthService } from '../../../core/services/auth.service';
+import { RegisterRequestDto } from '../../../core/models/auth.model';
+import { TranslatePipe } from '../../../shared/pipes/translate.pipe';
+import { ButtonComponent } from "../../../shared/components/button.component";
 
 @Component({
   selector: 'app-register',
   standalone: true,
   imports: [
     CommonModule,
+    RouterLink,
     ReactiveFormsModule,
-    TranslatePipe
-],
+    TranslatePipe,
+    ButtonComponent
+  ],
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })

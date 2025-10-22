@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { TranslationService } from '../../shared/services/translation.service';
+import { TranslationService } from '../../core/utils/translation.service';
 import { TranslatePipe } from '../../shared/pipes/translate.pipe'; 
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
-import { AuthService } from '../../shared/services/auth.service';
+import { AuthService } from '../../core/services/auth.service';
+import { ButtonComponent } from '../../shared/components/button.component';
 
 @Component({
   selector: 'app-settings',
@@ -15,7 +15,7 @@ import { AuthService } from '../../shared/services/auth.service';
     TranslatePipe,  
     FormsModule,
     CommonModule,
-    RouterModule
+    ButtonComponent
   ]
 })
 export class SettingsComponent {

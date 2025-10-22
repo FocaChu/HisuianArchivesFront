@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { TranslationService } from '../services/translation.service';
+import { TranslationService } from '../../core/utils/translation.service';
 
 @Pipe({
   name: 'translate',
@@ -10,7 +10,7 @@ export class TranslatePipe implements PipeTransform {
   private translations: any = {};
 
   constructor(private translationService: TranslationService) {
-    this.translationService.translations$.subscribe(res => {
+    this.translationService.translations$.subscribe((res: any) => {
       this.translations = res;
     });
   }

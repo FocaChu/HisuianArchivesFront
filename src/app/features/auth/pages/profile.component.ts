@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Observable } from 'rxjs';
-import { UserSummaryResponseDto } from '../../core/models/auth.model';
-import { AuthService } from '../../shared/services/auth.service';
+import { UserSummaryResponseDto } from '../../../core/models/auth.model';
+import { AuthService } from '../../../core/services/auth.service';
 
 @Component({
   selector: 'app-profile',
