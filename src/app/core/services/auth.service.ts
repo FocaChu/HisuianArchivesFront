@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { jwtDecode } from 'jwt-decode';
 import { environment } from '../../../environments/environment';
 import { LoginRequestDto, UserSummaryResponseDto, AuthResponseDto, RegisterRequestDto, DecodedTokenDto } from '../../core/models/auth.model';
+import { TranslationService } from '../utils/translation.service';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +22,11 @@ export class AuthService {
   private isLoggedInSubject = new BehaviorSubject<boolean>(false);
   public isLoggedIn$ = this.isLoggedInSubject.asObservable();
 
-  constructor(private http: HttpClient, private router: Router) {
+  constructor(
+    private http: HttpClient, 
+    private router: Router,
+    private translationService: TranslationService
+  ) {
     this.loadToken();
   }
 
@@ -82,6 +87,9 @@ export class AuthService {
   logout(): void {
     localStorage.removeItem('auth_token');
     localStorage.removeItem('user_profile');
+    
+    // Clear language preference on logout to reset to browser default
+    this.translationService.clearLanguagePreference();
     
     this.isLoggedInSubject.next(false);
     this.currentUserProfileSubject.next(null);
