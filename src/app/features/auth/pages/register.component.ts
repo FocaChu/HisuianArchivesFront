@@ -51,7 +51,7 @@ export class RegisterComponent implements OnInit {
 
     this.authService.register(registerData).subscribe({
       next: (response) => {
-        this.notificationService.success('{{ "NOTIFICATIONS.SUCCESS.REGISTRATION" | translate }}');
+        this.notificationService.success('NOTIFICATIONS.SUCCESS.REGISTRATION');
       },
       error: (err) => {
         console.error('Registration failed', err);
@@ -59,8 +59,8 @@ export class RegisterComponent implements OnInit {
           this.errorMessage = err.error.error; 
           this.notificationService.error(err.error.error);
         } else {
-          this.errorMessage = '{{ "NOTIFICATIONS.ERROR.REGISTRATION_FAILED" | translate }}';
-          this.notificationService.error('{{ "NOTIFICATIONS.ERROR.REGISTRATION_FAILED" | translate }}');
+          this.errorMessage = 'NOTIFICATIONS.ERROR.REGISTRATION_FAILED';
+          this.notificationService.error('NOTIFICATIONS.ERROR.REGISTRATION_FAILED');
         }
       }
     });

@@ -122,12 +122,12 @@ export class EditProfileComponent implements OnInit, OnDestroy {
 
     this.userService.updateProfile(updateData).subscribe({
       next: (response) => {
-        this.notificationService.success('{{ "NOTIFICATIONS.SUCCESS.PROFILE_UPDATED" | translate }}');
+        this.notificationService.success('NOTIFICATIONS.SUCCESS.PROFILE_UPDATED');
         this.router.navigate(['/profile']);
       },
       error: (err) => {
         console.error('Erro ao atualizar perfil:', err);
-        this.notificationService.error('{{ "NOTIFICATIONS.ERROR.PROFILE_UPDATE_FAILED" | translate }}');
+        this.notificationService.error('NOTIFICATIONS.ERROR.PROFILE_UPDATE_FAILED');
       },
       complete: () => {
         this.isLoading = false;

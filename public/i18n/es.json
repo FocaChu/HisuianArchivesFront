@@ -53,7 +53,8 @@
       "BIOGRAPHY_PLACEHOLDER": "Cuéntanos un poco sobre ti...",
       "PASSWORD_PLACEHOLDER": "Mínimo 6 caracteres",
       "EDIT_NAME_PLACEHOLDER": "Ingresa tu nombre"
-    }
+    },
+    "LOADING": "Cargando..."
   },
   "LOGIN_PAGE": {
     "TITLE": "Accede a tu cuenta",

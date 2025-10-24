@@ -52,13 +52,13 @@ export class ProfileComponent implements OnInit, OnDestroy {
     if (file) {
       // Validate file type
       if (!file.type.startsWith('image/')) {
-        this.notificationService.error('{{ "NOTIFICATIONS.ERROR.INVALID_FILE_TYPE" | translate }}');
+        this.notificationService.error('NOTIFICATIONS.ERROR.INVALID_FILE_TYPE');
         return;
       }
       
       // Validate size (5MB)
       if (file.size > 5 * 1024 * 1024) {
-        this.notificationService.error('{{ "NOTIFICATIONS.ERROR.FILE_TOO_LARGE" | translate }}');
+        this.notificationService.error('NOTIFICATIONS.ERROR.FILE_TOO_LARGE');
         return;
       }
       
@@ -72,7 +72,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
     this.imageService.uploadImage(file, IMAGE_TYPES.USER_PROFILE).subscribe({
       next: (response) => {
         this.selectedImageId = response.imageId;
-        this.notificationService.success('{{ "NOTIFICATIONS.SUCCESS.IMAGE_UPLOADED" | translate }}');
+        this.notificationService.success('NOTIFICATIONS.SUCCESS.IMAGE_UPLOADED');
       },
       error: (err) => {
         console.error('Error uploading image:', err);
@@ -80,16 +80,16 @@ export class ProfileComponent implements OnInit, OnDestroy {
         // Handle different error types
         if (err.status === 400) {
           if (err.error?.detail?.includes('Invalid ImageType')) {
-            this.notificationService.error('{{ "NOTIFICATIONS.ERROR.INVALID_IMAGE_TYPE" | translate }}');
+            this.notificationService.error('NOTIFICATIONS.ERROR.INVALID_IMAGE_TYPE');
           } else {
-            this.notificationService.error('{{ "NOTIFICATIONS.ERROR.INVALID_FILE" | translate }}');
+            this.notificationService.error('NOTIFICATIONS.ERROR.INVALID_FILE');
           }
         } else if (err.status === 405) {
-          this.notificationService.error('{{ "NOTIFICATIONS.ERROR.METHOD_NOT_ALLOWED" | translate }}');
+          this.notificationService.error('NOTIFICATIONS.ERROR.METHOD_NOT_ALLOWED');
         } else if (err.status === 413) {
-          this.notificationService.error('{{ "NOTIFICATIONS.ERROR.FILE_TOO_LARGE_REDUCE" | translate }}');
+          this.notificationService.error('NOTIFICATIONS.ERROR.FILE_TOO_LARGE_REDUCE');
         } else {
-          this.notificationService.error('{{ "NOTIFICATIONS.ERROR.IMAGE_UPLOAD_FAILED" | translate }}');
+          this.notificationService.error('NOTIFICATIONS.ERROR.IMAGE_UPLOAD_FAILED');
         }
       },
       complete: () => {
@@ -108,12 +108,12 @@ export class ProfileComponent implements OnInit, OnDestroy {
 
     this.userService.updateProfileImage(updateData).subscribe({
       next: (response) => {
-        this.notificationService.success('{{ "NOTIFICATIONS.SUCCESS.PROFILE_IMAGE_UPDATED" | translate }}');
+        this.notificationService.success('NOTIFICATIONS.SUCCESS.PROFILE_IMAGE_UPDATED');
         this.selectedImageId = null;
       },
       error: (err) => {
         console.error('Erro ao definir imagem de perfil:', err);
-        this.notificationService.error('{{ "NOTIFICATIONS.ERROR.PROFILE_IMAGE_UPDATE_FAILED" | translate }}');
+        this.notificationService.error('NOTIFICATIONS.ERROR.PROFILE_IMAGE_UPDATE_FAILED');
       },
       complete: () => {
         this.isSettingProfile = false;

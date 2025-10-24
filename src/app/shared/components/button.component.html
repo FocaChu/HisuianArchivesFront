@@ -9,6 +9,6 @@
   }"
   (click)="onClick()"
 >
-  <ng-container *ngIf="!loading">{{ text }}</ng-container>
-  <span *ngIf="loading">Carregando...</span>
+  <ng-container *ngIf="!loading">{{ text | translate }}</ng-container>
+  <span *ngIf="loading">{{ 'COMMON.LOADING' | translate }}</span>
 </button>
