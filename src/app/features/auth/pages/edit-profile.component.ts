@@ -8,14 +8,16 @@ import { AuthService } from '../../../core/services/auth.service';
 import { NotificationService } from '../../../core/services/notification.service';
 import { UserSummaryResponseDto } from '../../../core/models/auth.model';
 import { UserUpdateProfileRequestDto } from '../../../core/models/user.model';
+import { TranslatePipe } from "../../../shared/pipes/translate.pipe";
 
 @Component({
   selector: 'app-edit-profile',
   standalone: true,
   imports: [
     CommonModule,
-    ReactiveFormsModule
-  ],
+    ReactiveFormsModule,
+    TranslatePipe
+],
   template: `
     <div class="max-w-md mx-auto mt-8 p-6 bg-white rounded-lg shadow-md">
       <h2 class="text-2xl font-bold text-gray-900 mb-6">Editar Perfil</h2>
@@ -30,7 +32,7 @@ import { UserUpdateProfileRequestDto } from '../../../core/models/user.model';
             id="name"
             formControlName="name"
             class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-            placeholder="Digite seu nome"
+            placeholder="{{ 'COMMON.VALIDATION.EDIT_NAME_PLACEHOLDER' | translate }}"
           />
           <div *ngIf="editForm.get('name')?.invalid && editForm.get('name')?.touched" 
                class="text-red-500 text-sm mt-1">
@@ -47,7 +49,7 @@ import { UserUpdateProfileRequestDto } from '../../../core/models/user.model';
             formControlName="bio"
             rows="4"
             class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-            placeholder="Conte um pouco sobre você..."
+            placeholder="{{ 'COMMON.VALIDATION.BIOGRAPHY_PLACEHOLDER' | translate }}"
           ></textarea>
         </div>
 
@@ -92,7 +94,7 @@ export class EditProfileComponent implements OnInit, OnDestroy {
       bio: new FormControl('')
     });
 
-    // Pré-preencher o formulário com os dados atuais do usuário
+    // Pre-fill form with current user data
     this.authService.currentUserProfile$
       .pipe(takeUntil(this.destroy$))
       .subscribe(user => {
@@ -120,12 +122,12 @@ export class EditProfileComponent implements OnInit, OnDestroy {
 
     this.userService.updateProfile(updateData).subscribe({
       next: (response) => {
-        this.notificationService.success('Perfil atualizado com sucesso!');
+        this.notificationService.success('{{ "NOTIFICATIONS.SUCCESS.PROFILE_UPDATED" | translate }}');
         this.router.navigate(['/profile']);
       },
       error: (err) => {
         console.error('Erro ao atualizar perfil:', err);
-        this.notificationService.error('Erro ao atualizar perfil. Tente novamente.');
+        this.notificationService.error('{{ "NOTIFICATIONS.ERROR.PROFILE_UPDATE_FAILED" | translate }}');
       },
       complete: () => {
         this.isLoading = false;

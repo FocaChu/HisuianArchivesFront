@@ -30,7 +30,7 @@ export class TranslationService {
         this._translations.next(data);
       },
       error: (err) => {
-        console.error(`Erro ao carregar o arquivo de tradução para ${lang}:`, err);
+        console.error(`Error loading translation file for ${lang}:`, err);
       }
     });
   }

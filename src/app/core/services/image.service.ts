@@ -26,8 +26,8 @@ export class ImageService {
       endpoint: `${this.apiUrl}/upload`
     });
 
-    // Não definir Content-Type manualmente para multipart/form-data
-    // O Angular deve definir automaticamente com boundary
+    // Don't manually set Content-Type for multipart/form-data
+    // Angular should set it automatically with boundary
     return this.http.post<ImageUploadResponseDto>(`${this.apiUrl}/upload`, formData);
   }
 }

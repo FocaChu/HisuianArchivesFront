@@ -49,7 +49,9 @@
       "PASSWORD_REQUIRED": "Password is required.",
       "NAME_PLACEHOLDER": "Your full name",
       "EMAIL_PLACEHOLDER": "your@email.com",
-      "BIOGRAPHY_PLACEHOLDER": "Talk a bit about yourself..."
+      "BIOGRAPHY_PLACEHOLDER": "Tell us a bit about yourself...",
+      "PASSWORD_PLACEHOLDER": "Minimum 6 characters",
+      "EDIT_NAME_PLACEHOLDER": "Enter your name"
     }
   },
   "LOGIN_PAGE": {
@@ -64,6 +66,42 @@
     "SUBMIT_BUTTON": "Register",
     "HAVE_ACCOUNT_QUESTION": "Already have an account?",
     "LOGIN_LINK": "Login here"
+  },
+  "PROFILE_PAGE": {
+    "TITLE": "Profile",
+    "SUBTITLE": "Manage your profile information and settings",
+    "EDIT_PROFILE_BUTTON": "Edit Profile",
+    "UPLOAD_IMAGE_BUTTON": "Upload Image",
+    "SAVE_CHANGES_BUTTON": "Save Changes",
+    "CANCEL_BUTTON": "Cancel",
+    "CREATED_LABEL": "Member since",
+    "LAST_MODIFIED_LABEL": "Last updated",
+    "IMAGE_UPLOAD": {
+      "SELECT_FILE": "Select Image",
+      "NO_FILE_SELECTED": "No file selected"
+    }
+  },
+  "NOTIFICATIONS": {
+    "SUCCESS": {
+      "LOGIN": "Login successful!",
+      "REGISTRATION": "Registration successful!",
+      "PROFILE_UPDATED": "Profile updated successfully!",
+      "IMAGE_UPLOADED": "Image uploaded successfully!",
+      "PROFILE_IMAGE_UPDATED": "Profile image updated successfully!"
+    },
+    "ERROR": {
+      "LOGIN_FAILED": "Invalid email or password. Try again.",
+      "REGISTRATION_FAILED": "An error occurred during registration. Try again.",
+      "PROFILE_UPDATE_FAILED": "Error updating profile. Try again.",
+      "IMAGE_UPLOAD_FAILED": "Error uploading image. Try again.",
+      "PROFILE_IMAGE_UPDATE_FAILED": "Error setting profile image. Try again.",
+      "INVALID_FILE_TYPE": "Please select only image files.",
+      "FILE_TOO_LARGE": "Image must be maximum 5MB.",
+      "INVALID_IMAGE_TYPE": "Invalid image type. Use only profile images.",
+      "INVALID_FILE": "Invalid file. Check image format and size.",
+      "METHOD_NOT_ALLOWED": "Method not allowed. Check if endpoint is correct.",
+      "FILE_TOO_LARGE_REDUCE": "File too large. Reduce image size."
+    }
   },
   "ABOUT_PAGE": {
     "TITLE": "About Hisuian Archives",

@@ -50,15 +50,15 @@ export class ProfileComponent implements OnInit, OnDestroy {
   onFileSelected(event: any): void {
     const file = event.target.files[0];
     if (file) {
-      // Validar tipo de arquivo
+      // Validate file type
       if (!file.type.startsWith('image/')) {
-        this.notificationService.error('Por favor, selecione apenas arquivos de imagem.');
+        this.notificationService.error('{{ "NOTIFICATIONS.ERROR.INVALID_FILE_TYPE" | translate }}');
         return;
       }
       
-      // Validar tamanho (5MB)
+      // Validate size (5MB)
       if (file.size > 5 * 1024 * 1024) {
-        this.notificationService.error('A imagem deve ter no máximo 5MB.');
+        this.notificationService.error('{{ "NOTIFICATIONS.ERROR.FILE_TOO_LARGE" | translate }}');
         return;
       }
       
@@ -72,24 +72,24 @@ export class ProfileComponent implements OnInit, OnDestroy {
     this.imageService.uploadImage(file, IMAGE_TYPES.USER_PROFILE).subscribe({
       next: (response) => {
         this.selectedImageId = response.imageId;
-        this.notificationService.success('Imagem enviada com sucesso!');
+        this.notificationService.success('{{ "NOTIFICATIONS.SUCCESS.IMAGE_UPLOADED" | translate }}');
       },
       error: (err) => {
-        console.error('Erro ao enviar imagem:', err);
+        console.error('Error uploading image:', err);
         
-        // Tratar diferentes tipos de erro
+        // Handle different error types
         if (err.status === 400) {
           if (err.error?.detail?.includes('Invalid ImageType')) {
-            this.notificationService.error('Tipo de imagem inválido. Use apenas imagens de perfil.');
+            this.notificationService.error('{{ "NOTIFICATIONS.ERROR.INVALID_IMAGE_TYPE" | translate }}');
           } else {
-            this.notificationService.error('Arquivo inválido. Verifique o formato e tamanho da imagem.');
+            this.notificationService.error('{{ "NOTIFICATIONS.ERROR.INVALID_FILE" | translate }}');
           }
         } else if (err.status === 405) {
-          this.notificationService.error('Método não permitido. Verifique se o endpoint está correto.');
+          this.notificationService.error('{{ "NOTIFICATIONS.ERROR.METHOD_NOT_ALLOWED" | translate }}');
         } else if (err.status === 413) {
-          this.notificationService.error('Arquivo muito grande. Reduza o tamanho da imagem.');
+          this.notificationService.error('{{ "NOTIFICATIONS.ERROR.FILE_TOO_LARGE_REDUCE" | translate }}');
         } else {
-          this.notificationService.error('Erro ao enviar imagem. Tente novamente.');
+          this.notificationService.error('{{ "NOTIFICATIONS.ERROR.IMAGE_UPLOAD_FAILED" | translate }}');
         }
       },
       complete: () => {
@@ -108,12 +108,12 @@ export class ProfileComponent implements OnInit, OnDestroy {
 
     this.userService.updateProfileImage(updateData).subscribe({
       next: (response) => {
-        this.notificationService.success('Foto de perfil atualizada com sucesso!');
+        this.notificationService.success('{{ "NOTIFICATIONS.SUCCESS.PROFILE_IMAGE_UPDATED" | translate }}');
         this.selectedImageId = null;
       },
       error: (err) => {
         console.error('Erro ao definir imagem de perfil:', err);
-        this.notificationService.error('Erro ao definir imagem de perfil. Tente novamente.');
+        this.notificationService.error('{{ "NOTIFICATIONS.ERROR.PROFILE_IMAGE_UPDATE_FAILED" | translate }}');
       },
       complete: () => {
         this.isSettingProfile = false;

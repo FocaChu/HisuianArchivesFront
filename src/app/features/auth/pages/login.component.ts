@@ -50,12 +50,12 @@ export class LoginComponent implements OnInit {
 
     this.authService.login(credentials).subscribe({
       next: (response) => {
-        this.notificationService.success('Login realizado com sucesso!');
+        this.notificationService.success('{{ "NOTIFICATIONS.SUCCESS.LOGIN" | translate }}');
       },
       error: (err) => {
         console.error('Falha no login', err);
-        this.errorMessage = 'E-mail ou senha inválidos. Tente novamente.';
-        this.notificationService.error('E-mail ou senha inválidos. Tente novamente.');
+        this.errorMessage = '{{ "NOTIFICATIONS.ERROR.LOGIN_FAILED" | translate }}';
+        this.notificationService.error('{{ "NOTIFICATIONS.ERROR.LOGIN_FAILED" | translate }}');
       }
     });
   }

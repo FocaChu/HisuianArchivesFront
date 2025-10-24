@@ -8,7 +8,7 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
 
   let headers = req.headers;
 
-  // Sempre adicionar o cabeçalho para pular o aviso do ngrok
+  // Always add header to skip ngrok browser warning
   headers = headers.set('ngrok-skip-browser-warning', '1');
 
   if (authToken) {

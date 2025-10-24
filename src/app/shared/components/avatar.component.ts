@@ -29,7 +29,7 @@ import { environment } from '../../../environments/environment';
 })
 export class AvatarComponent {
   @Input() imageId?: string;
-  @Input() userName: string = 'Usuário';
+  @Input() userName: string = 'User';
   @Input() size: 'sm' | 'md' | 'lg' | 'xl' = 'md';
 
   getSizeClasses(): string {

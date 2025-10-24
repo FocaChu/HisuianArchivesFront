@@ -50,7 +50,9 @@
       "PASSWORD_REQUIRED": "La contraseña es obligatoria.",
       "NAME_PLACEHOLDER": "Tu nombre completo",
       "EMAIL_PLACEHOLDER": "tu@email.com",
-      "BIOGRAPHY_PLACEHOLDER": "Cuéntanos un poco sobre ti..."
+      "BIOGRAPHY_PLACEHOLDER": "Cuéntanos un poco sobre ti...",
+      "PASSWORD_PLACEHOLDER": "Mínimo 6 caracteres",
+      "EDIT_NAME_PLACEHOLDER": "Ingresa tu nombre"
     }
   },
   "LOGIN_PAGE": {
@@ -65,6 +67,42 @@
     "REGISTER_BUTTON": "Registrar",
     "HAVE_ACCOUNT_QUESTION": "¿Ya tienes una cuenta?",
     "LOGIN_LINK": "Inicia sesión aquí"
+  },
+  "PROFILE_PAGE": {
+    "TITLE": "Perfil",
+    "SUBTITLE": "Gestiona tu información y configuración de perfil",
+    "EDIT_PROFILE_BUTTON": "Editar Perfil",
+    "UPLOAD_IMAGE_BUTTON": "Subir Imagen",
+    "SAVE_CHANGES_BUTTON": "Guardar Cambios",
+    "CANCEL_BUTTON": "Cancelar",
+    "CREATED_LABEL": "Miembro desde",
+    "LAST_MODIFIED_LABEL": "Última actualización",
+    "IMAGE_UPLOAD": {
+      "SELECT_FILE": "Seleccionar Imagen",
+      "NO_FILE_SELECTED": "Ningún archivo seleccionado"
+    }
+  },
+  "NOTIFICATIONS": {
+    "SUCCESS": {
+      "LOGIN": "¡Inicio de sesión exitoso!",
+      "REGISTRATION": "¡Registro exitoso!",
+      "PROFILE_UPDATED": "¡Perfil actualizado exitosamente!",
+      "IMAGE_UPLOADED": "¡Imagen subida exitosamente!",
+      "PROFILE_IMAGE_UPDATED": "¡Foto de perfil actualizada exitosamente!"
+    },
+    "ERROR": {
+      "LOGIN_FAILED": "Correo electrónico o contraseña inválidos. Inténtalo de nuevo.",
+      "REGISTRATION_FAILED": "Ocurrió un error durante el registro. Inténtalo de nuevo.",
+      "PROFILE_UPDATE_FAILED": "Error al actualizar perfil. Inténtalo de nuevo.",
+      "IMAGE_UPLOAD_FAILED": "Error al subir imagen. Inténtalo de nuevo.",
+      "PROFILE_IMAGE_UPDATE_FAILED": "Error al establecer imagen de perfil. Inténtalo de nuevo.",
+      "INVALID_FILE_TYPE": "Por favor, selecciona solo archivos de imagen.",
+      "FILE_TOO_LARGE": "La imagen debe tener máximo 5MB.",
+      "INVALID_IMAGE_TYPE": "Tipo de imagen inválido. Usa solo imágenes de perfil.",
+      "INVALID_FILE": "Archivo inválido. Verifica el formato y tamaño de la imagen.",
+      "METHOD_NOT_ALLOWED": "Método no permitido. Verifica si el endpoint es correcto.",
+      "FILE_TOO_LARGE_REDUCE": "Archivo muy grande. Reduce el tamaño de la imagen."
+    }
   },
   "ABOUT_PAGE": {
     "TITLE": "Sobre Hisuian Archives",
