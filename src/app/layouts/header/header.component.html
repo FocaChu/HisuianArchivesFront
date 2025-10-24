@@ -28,7 +28,7 @@
             variant="secondary"
         ></app-button>
         
-        <!-- Menu para usuário logado -->
+        <!-- Menu for logged in user -->
         <div *ngIf="isLoggedIn$ | async" class="relative">
             <div class="flex items-center gap-3">
                 <app-avatar 
@@ -46,30 +46,30 @@
                         </svg>
                     </button>
                     
-                    <!-- Dropdown menu -->
+                    <!-- Dropdown menu for logged in user -->
                     <div class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                         <button 
                             (click)="navigateToProfile()"
                             class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                            Meu Perfil
+                            {{ 'HEADER.USER_MENU.MY_PROFILE' | translate }}
                         </button>
                         <button 
                             (click)="navigateToEditProfile()"
                             class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                            Editar Perfil
+                            {{ 'HEADER.USER_MENU.EDIT_PROFILE' | translate }}
                         </button>
                         <hr class="my-1">
                         <button 
                             (click)="logout()"
                             class="block w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100">
-                            Sair
+                            {{ 'HEADER.USER_MENU.LOGOUT' | translate }}
                         </button>
                     </div>
                 </div>
             </div>
         </div>
         
-        <!-- Botão de login para usuário não logado -->
+        <!-- Login button for logged out user -->
         <app-button
             *ngIf="!(isLoggedIn$ | async)"
             [text]="'HEADER.LOGIN_BUTTON' | translate"

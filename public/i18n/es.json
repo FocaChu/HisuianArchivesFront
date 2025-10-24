@@ -3,7 +3,12 @@
     "TITLE": "Hisuian Archives",
     "NEW_DEX_BUTTON": "Nueva Dex",
     "NEW_SET_BUTTON": "Nueva Colección",
-    "LOGIN_BUTTON": "Iniciar Sesión"
+    "LOGIN_BUTTON": "Iniciar Sesión",
+    "USER_MENU": {
+      "MY_PROFILE": "Mi Perfil",
+      "EDIT_PROFILE": "Editar Perfil",
+      "LOGOUT": "Cerrar Sesión"
+    }
   },
   "FOOTER": {
     "ABOUT_LINK": "Sobre",
